@@ -3,6 +3,7 @@ import autosize from 'autosize';
 import jquery from 'jquery';
 import _ from 'underscore';
 import 'jquery.scrollto';
+import 'vendor/jquery-osdi';
 
 (function($) {
   'use strict';
@@ -92,6 +93,12 @@ import 'jquery.scrollto';
     $.post($form.attr('action'), $form.serialize()).then(function() {
       $form.find('.form-confirmation').removeClass('hidden');
     });
+  });
+
+  $('.js-action-network-form').osdi({
+    done: () => {
+      alert('submitted');
+    }
   });
 
   autosize($('textarea'));

@@ -198,13 +198,17 @@ block content
         h3 Contact Us
         p.
           Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just #[a(href='http://hackforla-slack.herokuapp.com/', target='_blank') check us out on Slack]? Looking to volunteer?
-        form.js-ajax-form.contact-form(action='thank-you', method='post', name='Contact Form', netlify)
+        form.js-ajax-form.contact-form.js-action-network-form(
+          action='https://actionnetwork.org/api/v2/forms/contact-us-35/submissions',
+          method='post',
+          name='Contact Form'
+        )
           textarea(placeholder='Send us a message', name='message', required)
           .form-controls
             .form-input
               label(for='contact-email').sr-only Enter your email address
               input(type='email',
-                name='email',
+                name='email_address',
                 placeholder='Enter your email address', required)#contact-email
             button(type='submit').btn.btn-primary Send message
           p.form-confirmation.hidden
